@@ -10,6 +10,20 @@ new Vue({
     newTask: ''
 },
   
+  filters: {
+    
+    inProcess: function(tasks){
+    
+      return tasks.filter(function(tasks) {
+        
+         return !tasks.completed;
+        
+      });
+    
+    }
+    
+  },
+  
   
   methods: {
     
@@ -28,12 +42,29 @@ new Vue({
     
     },
     
+    editTask: function(task){
+    
+      this.removeTask(task);
+      
+      this.newTask = task.body;
+      
+      this.$$.newTask.focus();
+      
+    },
+    
+    completeTask: function(task){
+    
+      task.completed = true;
+    },
+    
     removeTask: function(task) {
     
       this.tasks.$remove(task);
     
     
     }
+    
+   
   
   }
 })
