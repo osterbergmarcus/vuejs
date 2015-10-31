@@ -13,7 +13,7 @@
 
         <!-- The Form to Add a New Task -->
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 col-md-offset-3">
                 <form v-on="submit: addTask">
                     <div class="form-group">
                         <input v-model="newTask"
@@ -40,7 +40,7 @@
 
         <!-- The List of Todos -->
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 col-md-offset-3">
                 <div v-show="remaining.length">
                     <h1>Tasks ({{ remaining.length }})</h1>
         
@@ -63,7 +63,7 @@
 
         <!-- The List of Completed Tasks -->
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 col-md-offset-3">
                 <div v-if="completions.length">
                     <h2>Completed ({{ completions.length }})</h2>
         
