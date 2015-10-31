@@ -12,24 +12,30 @@
     <div id="tasks">
 
         <!-- The Form to Add a New Task -->
-        <form v-on="submit: addTask">
-            <div class="form-group">
-                <input v-model="newTask"
-                       v-el="newTask"
-                       class="form-control"
-                       placeholder="I need to..."></input>
+        <div class="row">
+            <div class="col-md-6">
+                <form v-on="submit: addTask">
+                    <div class="form-group">
+                        <input v-model="newTask"
+                               v-el="newTask"
+                               class="form-control"
+                               placeholder="I need to..."></input>
+                    </div>
+        
+                    <button class="btn btn-primary">
+                        Add Task
+                    </button>
+        
+                    <button v-on="click: completeAll"
+                            class="btn btn-default"
+                    >
+                        Mark All As Completed?
+                    </button>
+                </form>
             </div>
-
-            <button class="btn btn-primary">
-                Add Task
-            </button>
-
-            <button v-on="click: completeAll"
-                    class="btn btn-default"
-            >
-                Mark All As Completed?
-            </button>
-        </form>
+            
+        </div>
+        
 
 
         <!-- The List of Todos -->
