@@ -39,20 +39,26 @@
 
 
         <!-- The List of Todos -->
-        <div v-show="remaining.length">
-            <h1>Tasks ({{ remaining.length }})</h1>
-
-            <ol class="list-group">
-                <li v-repeat="task: remaining"
-                    class="list-group-item"
-                >
-                    <span v-on="dblclick: editTask(task)">{{ task.body }}</span>
-
-                    <button v-on="click: removeTask(task)">&#10007;</button>
-                    <button v-on="click: toggleTaskCompletion(task)">&#10004</button>
-                </li>
-            </ol>
+        <div class="row">
+            <div class="col-md-5">
+                <div v-show="remaining.length">
+                    <h1>Tasks ({{ remaining.length }})</h1>
+        
+                    <ol class="list-group">
+                        <li v-repeat="task: remaining"
+                            class="list-group-item"
+                        >
+                            <span v-on="dblclick: editTask(task)">{{ task.body }}</span>
+        
+                            <button v-on="click: removeTask(task)">&#10007;</button>
+                            <button v-on="click: toggleTaskCompletion(task)">&#10004</button>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
         </div>
+        
 
 
         <!-- The List of Completed Tasks -->
